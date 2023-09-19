@@ -13,6 +13,9 @@ app.use(express.json());
 app.use("/user",userRouter);
 app.use("/product",productRouter);
 app.use("/store",storeRouter);
+app.get("/",(req,res)=>{
+    res.status(200).json({message:"Server Is Running!"})
+})
 app.listen(port,()=>{
     console.log("Welcome to a server");
 })
