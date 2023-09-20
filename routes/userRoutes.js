@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const userRouter = express.Router();
 const mongoose = require("mongoose");
 // FOR USER SIGN UP PAGE
+const secretKey = "YXNkZmFzZGZhc2RmYXNkZmFzZGZhc2Rm";
 userRouter.post("/createuser", async (req, res) => {
   try {
     const { name, password , email} = req.body;
@@ -160,7 +161,7 @@ userRouter.get(`/gorder/:userID` , async(req,res)=>{
 module.exports = userRouter;
 
 // integrating payment gateway
-// const secretKey = "YXNkZmFzZGZhc2RmYXNkZmFzZGZhc2Rm";
+// 
 // userRouter.post("/create-checkout-session" , async(req,res)=>{
 //   try {
 //     const session = stripe.checkout.sessions.create({
